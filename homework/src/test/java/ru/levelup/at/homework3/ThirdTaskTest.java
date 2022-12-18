@@ -9,7 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class ThirdTaskTest extends CommonSeleniumTest {
-    //Класс, выполняющий тест для задания 2
+    //Класс, выполняющий тест для задания 3
 
     @Test
     void sendNewMessageAndDelete() {
