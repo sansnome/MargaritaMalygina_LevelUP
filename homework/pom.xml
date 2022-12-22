@@ -18,6 +18,8 @@
         <testng.version>7.6.1</testng.version>
         <assertj-core.version>3.23.1</assertj-core.version>
         <junit-jupiter.version>5.9.1</junit-jupiter.version>
+        <selenium-java.version>4.6.0</selenium-java.version>
+        <webdrivermanager.version>5.3.1</webdrivermanager.version>
 
         <maven-checkstyle-plugin.version>3.2.0</maven-checkstyle-plugin.version>
         <maven-surefire-plugin.version>3.0.0-M7</maven-surefire-plugin.version>
@@ -51,30 +53,59 @@
             <version>${junit-platform-engine.version}</version>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>${selenium-java.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>${webdrivermanager.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>2.0.0-alpha1</version>
+        </dependency>
     </dependencies>
 
     <profiles>
-        <profile>
-            <id>homework2-all-tests</id>
-            <properties>
-                <test.classes>homework2/AllTestSuite.class</test.classes>
-            </properties>
-        </profile>
+        //профайлы к дз2 закомментила, т.к. в ветке с дз3 нет файлов с тестами из дз 2
+       // <profile>
+         //   <id>homework2-all-tests</id>
+          //  <properties>
+             //   <test.classes>homework2/AllTestSuite.class</test.classes>
+          //  </properties>
+     //   </profile>
+
+      //  <profile>
+          //  <id>homework2-positive-tests</id>
+         //   <properties>
+           //     <test.classes>homework2/PositiveTestSuite.class</test.classes>
+        //    </properties>
+     //   </profile>
+
+     //   <profile>
+         //   <id>homework2-negative-tests</id>
+         //   <activation>
+           //     <activeByDefault>false</activeByDefault>
+          //  </activation>
+         //   <properties>
+           //     <test.classes>homework2/NegativeTestSuite.class</test.classes>
+          //  </properties>
+    //    </profile>
 
         <profile>
-            <id>homework2-positive-tests</id>
-            <properties>
-                <test.classes>homework2/PositiveTestSuite.class</test.classes>
-            </properties>
-        </profile>
-
-        <profile>
-            <id>homework2-negative-tests</id>
+            <id>homework3-all-tests</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
-                <test.classes>homework2/NegativeTestSuite.class</test.classes>
+                <test.classes>homework3/*TaskTest.class</test.classes>
             </properties>
         </profile>
     </profiles>
