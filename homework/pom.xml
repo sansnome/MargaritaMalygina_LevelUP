@@ -74,38 +74,44 @@
     </dependencies>
 
     <profiles>
-        //профайлы к дз2 закомментила, т.к. в ветке с дз3 нет файлов с тестами из дз 2
-       // <profile>
-         //   <id>homework2-all-tests</id>
-          //  <properties>
-             //   <test.classes>homework2/AllTestSuite.class</test.classes>
-          //  </properties>
-     //   </profile>
+        <profile>
+            <id>homework2-all-tests</id>
+            <properties>
+                <test.classes>homework2/AllTestSuite.class</test.classes>
+            </properties>
+        </profile>
 
-      //  <profile>
-          //  <id>homework2-positive-tests</id>
-         //   <properties>
-           //     <test.classes>homework2/PositiveTestSuite.class</test.classes>
-        //    </properties>
-     //   </profile>
+        <profile>
+            <id>homework2-positive-tests</id>
+            <properties>
+                <test.classes>homework2/PositiveTestSuite.class</test.classes>
+            </properties>
+        </profile>
 
-     //   <profile>
-         //   <id>homework2-negative-tests</id>
-         //   <activation>
-           //     <activeByDefault>false</activeByDefault>
-          //  </activation>
-         //   <properties>
-           //     <test.classes>homework2/NegativeTestSuite.class</test.classes>
-          //  </properties>
-    //    </profile>
+        <profile>
+            <id>homework2-negative-tests</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <test.classes>homework2/NegativeTestSuite.class</test.classes>
+            </properties>
+        </profile>
 
         <profile>
             <id>homework3-all-tests</id>
+            <properties>
+                <test.classes>homework3/*TaskTest.class</test.classes>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>homework4-all-tests</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
-                <test.classes>homework3/*TaskTest.class</test.classes>
+                <test.classes>homework4/*TaskWithPageObjectTest.class</test.classes>
             </properties>
         </profile>
     </profiles>
