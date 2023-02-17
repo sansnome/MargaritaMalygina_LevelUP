@@ -1,6 +1,7 @@
 package ru.levelup.at.homework7.steps;
 
 import io.qameta.allure.Step;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 
 public class ActionStep extends BaseStep {
@@ -21,6 +22,9 @@ public class ActionStep extends BaseStep {
         /* if (mainMailPage.isPopUp()) {
            mainMailPage.closePopUp();
         }*/
+        if (mainMailPage.isPhonePopUp()) {
+            mainMailPage.closePhonePopUp();
+        }
         mainMailPage.clickCreateMailButton();
         mainMailPage.sendLoginToAddressField(address);
         mainMailPage.sendSubjectToSubjectMailField(subject);

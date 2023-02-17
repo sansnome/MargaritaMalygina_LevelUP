@@ -1,13 +1,14 @@
 package ru.levelup.at.homework7;
 
 import java.util.List;
-import java.util.NoSuchElementException;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import ru.levelup.at.homework7.BasePage;
+
 
 public class MainMailPage extends BasePage {
     //класс с вебэлементами основной страницы почты
@@ -104,6 +105,9 @@ public class MainMailPage extends BasePage {
     @FindBy(css = "div.ph-project-promo-close-icon.svelte-m7oyyo > div")
     private WebElement popUp;
 
+    @FindBy(xpath = "//*[text()= 'Отменить']")
+    private WebElement telephonePopUp;
+
     @FindBy(css = "[role='textbox']>div>div>div> :first-child >div")
     private WebElement textFromDraftLetter;
 
@@ -135,6 +139,21 @@ public class MainMailPage extends BasePage {
 
     public boolean isPopUp() {
         return wait.until(ExpectedConditions.visibilityOf(popUp)).isDisplayed();
+    }
+
+    public boolean isPhonePopUp() {
+        try {
+            if (wait.until(ExpectedConditions.visibilityOf(telephonePopUp)).isDisplayed()) {
+                return true;
+            }
+        } catch (Exception e) {
+            return false;
+        }
+        return false;
+    }
+
+    public void closePhonePopUp() {
+        wait.until(ExpectedConditions.visibilityOf(telephonePopUp)).click();
     }
 
     public boolean isDraftEmpty() {
