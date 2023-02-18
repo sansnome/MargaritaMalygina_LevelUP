@@ -2,6 +2,7 @@ package ru.levelup.at.homework7;
 
 import java.util.List;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -250,7 +251,9 @@ public class MainMailPage extends BasePage {
     }
 
     public void sendLetterButton() {
-        wait.until(ExpectedConditions.visibilityOf(sendMailButton)).click();
+        JavascriptExecutor ex = (JavascriptExecutor) driver;
+        ex.executeScript("arguments[0].click()", sendMailButton);
+        //wait.until(ExpectedConditions.visibilityOf(sendMailButton)).click();
     }
 
     public void closeSentLetter() {
