@@ -6,6 +6,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import ru.levelup.at.homework7.PropertiesReader;
 import ru.levelup.at.homework7.context.TestContext;
 import ru.levelup.at.homework7.listener.AllureAttachmentCallBack;
@@ -32,7 +33,15 @@ public class CommonSeleniumTest {
 
     @BeforeEach
     void setUp() {
-        driver = new ChromeDriver();
+
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments("window-size=1920,1080");
+        chromeOptions.addArguments("--disable-notifications");
+        chromeOptions.addArguments("--disable-extenstions");
+        chromeOptions.addArguments("disable-infobars");
+        chromeOptions.addArguments("force-device-scale-factor=0.75");
+        chromeOptions.addArguments("high-dpi-support=0.75");
+        driver = new ChromeDriver(chromeOptions);
         driver.manage().window().maximize();
         actionStep = new ActionStep(driver);
         assertionStep = new AssertionStep(driver);
