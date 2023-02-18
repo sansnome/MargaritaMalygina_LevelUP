@@ -35,7 +35,7 @@ public class CommonSeleniumTest {
     void setUp() {
 
         ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("window-size=1920,1080");
+        chromeOptions.addArguments("window-size=1366,560");
         chromeOptions.addArguments("--disable-notifications");
         chromeOptions.addArguments("--disable-extenstions");
         chromeOptions.addArguments("disable-infobars");

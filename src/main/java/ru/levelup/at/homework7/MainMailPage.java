@@ -64,6 +64,9 @@ public class MainMailPage extends BasePage {
     private WebElement saveMailButton;
 
     @FindBy(css = "button[data-test-id='send'")
+    private WebElement sendMailButton1;
+
+    @FindBy(xpath = "//*[text()= 'Отправить']")
     private WebElement sendMailButton;
 
     @FindBy(css = "button[title='Закрыть']")
